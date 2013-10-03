@@ -1,0 +1,14 @@
+[10-Dec-2011 12:06:28] PHP Warning:  fopen() [<a href='function.fopen'>function.fopen</a>]: Unable to access file.txt in /home/windows1/public_html/web/fileopen.php on line 6
+[10-Dec-2011 12:06:28] PHP Warning:  fopen(file.txt) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in /home/windows1/public_html/web/fileopen.php on line 6
+[10-Dec-2011 12:06:28] PHP Warning:  filesize() [<a href='function.filesize'>function.filesize</a>]: stat failed for file.txt in /home/windows1/public_html/web/fileopen.php on line 9
+[10-Dec-2011 12:06:28] PHP Warning:  fread(): supplied argument is not a valid stream resource in /home/windows1/public_html/web/fileopen.php on line 9
+[10-Dec-2011 12:06:28] PHP Warning:  fclose(): supplied argument is not a valid stream resource in /home/windows1/public_html/web/fileopen.php on line 12
+[10-Dec-2011 12:17:46] PHP Warning:  filesize() [<a href='function.filesize'>function.filesize</a>]: stat failed for http://tvcountdown.com/s/american-horror-story in /home/windows1/public_html/web/fileopen.php on line 9
+[10-Dec-2011 12:17:46] PHP Warning:  fread() [<a href='function.fread'>function.fread</a>]: Length parameter must be greater than 0 in /home/windows1/public_html/web/fileopen.php on line 9
+[10-Dec-2011 12:18:21] PHP Warning:  Wrong parameter count for fread() in /home/windows1/public_html/web/fileopen.php on line 9
+[10-Dec-2011 12:18:48] PHP Warning:  filesize() [<a href='function.filesize'>function.filesize</a>]: stat failed for http://google.com in /home/windows1/public_html/web/fileopen.php on line 9
+[10-Dec-2011 12:18:48] PHP Warning:  fread() [<a href='function.fread'>function.fread</a>]: Length parameter must be greater than 0 in /home/windows1/public_html/web/fileopen.php on line 9
+[10-Dec-2011 12:21:46] PHP Warning:  filesize() [<a href='function.filesize'>function.filesize</a>]: stat failed for http://windowsvj.com/wpblog/ in /home/windows1/public_html/web/fileopen.php on line 9
+[10-Dec-2011 12:21:46] PHP Warning:  fread() [<a href='function.fread'>function.fread</a>]: Length parameter must be greater than 0 in /home/windows1/public_html/web/fileopen.php on line 9
+[10-Dec-2011 12:46:37] PHP Warning:  fread(): supplied argument is not a valid stream resource in /home/windows1/public_html/web/fileopen.php on line 5
+[10-Dec-2011 12:47:11] PHP Warning:  fread(): supplied argument is not a valid stream resource in /home/windows1/public_html/web/fileopen.php on line 5

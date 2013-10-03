@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>HelloWorld</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0.RC/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0.RC/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0.RC/js/ui.js"></script>
+    <script type="text/javascript">
+
+        function onStart() {
+            var start = Windows.UI.StartScreen;
+            // Handle click events from the Pin command
+            document.getElementById("pin").addEventListener("click", function (e) {
+                var uri = new Windows.Foundation.Uri("ms-appx:///" + item.tileImage);
+
+                var tile = new start.SecondaryTile(
+                    item.key,                                    // Tile ID
+                    item.shortTitle,                             // Tile short name
+                    item.title,                                  // Tile display name
+                    //JSON.stringify(Data.getItemReference(item)), // Activation argument
+                    start.TileOptions.showNameOnLogo,            // Tile options
+                    uri                                          // Tile logo URI
+                );
+                //tile.requestCreateAsync();
+            });
+        }
+
+        function changeTitle() {
+            var title = document.getElementById("content");
+            var newTitle = document.getElementById("textBox").value;
+            if (newTitle == '') {
+                title.innerHTML = "Hello World";
+            }
+            else {
+                //title.innerHTML = newTitle + " says Hello to World";
+                WinJS.xhr({ url: "http://thetvdb.com/api/GetSeries.php?seriesname=" + newTitle + "&language=english" })
+                .done(function complete(result) {
+                    var resp = result.responseXML;
+                    if (resp) {
+                        var items = resp.querySelectorAll("Series");
+                        if (items) {
+                            var myTable = document.getElementById("srchRes");
+                            var bkpInnerHTML = myTable.innerHTML;
+                            var imdbURL = "http://www.imdb.com/title/" + items[0].querySelector('IMDB_ID').textContent;
+                            myTable.innerHTML = "<tr><a href="+imdbURL+"><img src='http://thetvdb.com/banners/" + items[0].querySelector('banner').textContent + "'/></a></tr>";
+                            myTable.innerHTML += "<tr><h2>" + items[0].querySelector("SeriesName").textContent + "</tr></h2>";
+                            myTable.innerHTML += "<tr><td><b>Lang:</b> " + items[0].querySelector("language").textContent + " <b>Name:</b> " + items[0].querySelector("SeriesName").textContent + " <b>First Aired:</b> " + items[0].querySelector("FirstAired").textContent + "</td> </tr>";
+                            myTable.innerHTML += "<tr><b>Overview: </b>" + items[0].querySelector("Overview").textContent + " </tr>";
+                            myTable.innerHTML += bkpInnerHTML;
+                        } else {
+                            myTable.innerHTML = "<tr>Sorry, we could not find any shows for your Input Query !!</tr>";
+                        }
+                    }
+                },
+                function error(error) {
+                    myTable.innerHTML = "<tr>Sorry, we could not find any shows for your Input Query !!</tr>" +error.statusText;
+                    myTable.style.backgroundColor = "#FF0000";
+                });
+            }
+        }
+
+    </script>
+    <!-- HelloWorld references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+</head>
+<body style="overflow:scroll;" onload="onStart()">
+    <div id="mainBox" style="text-align:center">
+        <div id="appbar">
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'pin', label:'Pin it', icon:'pin', section: 'selection'}"></button>
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'tweet', label:'Tweet it', icon:'add', section: 'selection'}"></button>
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'share', label:'Share it', icon:'camera', section: 'selection'}"></button>
+        </div>
+   
+        <h1>Awesome TV Show Info App</h1> 
+        <br/>
+            <input type="text" id="textBox" />
+        <br/><br/>   
+        <input type="button" id="myBtn" onclick="changeTitle()" value=" Search a TV Show !" />
+             
+        <p id="content"><a href='http://twitter.com/home?status=I am tweeting from my W8 App'> </a></p>
+        <table id="srchRes" class="movieContainer"> </table>
+            
+        <div id="xhrReport"></div>
+        <div id ="mainTable">
+            <table id="main">
+                <table id="defaultTV">
+                    <table id="tv1" class="movieContainer"></table><br/><br/>
+                    <table id="tv2" class="movieContainer"></table><br/><br/>
+                    <table id="tv3" class="movieContainer"></table><br/><br/>
+                    <table id="tv4" class="movieContainer"></table><br/><br/>
+                </table>
+                                    
+                <table id="searchTV" border="1">
+
+                </table>
+            </table>
+        </div>
+
+
+         <div id="moviesTemplate" data-win-control="WinJS.Binding.Template">
+         <div style="width: 150px; height: 130px;">
+         <img src="#" style="width: 100px; height: 100px;"
+         data-win-bind="alt: title; src: picture" />
+         <div>
+         <h4 data-win-bind="innerText:title"></h4>
+         </div>
+         </div>
+         </div>
+
+
+        <div id="movieListView"
+         data-win-control="WinJS.UI.ListView"
+         data-win-options="{itemTemplate : moviesTemplate,
+         layout: {type: WinJS.UI.GridLayout} }">
+         </div>
+
+        <div id="test">
+
+        </div>
+    </div>
+    </div>
+</body>
+</html>

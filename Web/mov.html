@@ -1,0 +1,71 @@
+<html>
+<style type="text/css">
+	table.fontColor{font-weight:bold;color:white;}
+</style>
+<body style="background-image:url(tvbg.jpg); background-repeat: no-repeat; background-position: center;">
+  
+<!--div id="time2">
+<b>Current Time is:</b> <span id="time"></span><br />
+</div-->
+
+
+<script type="text/javascript">
+function test()
+{
+var show=document.getElementById("id_show").value;
+var lang=document.getElementById("id_lang").value;
+var mirror="http://thetvdb.com/";
+var showURL= mirror + "api/GetSeries.php?seriesname=" + show + "&language=" + lang;
+
+        //http://thetvdb.com/api/GetSeries.php?seriesname=Fringe&language=English
+        //$url = 'http://www.thetvdb.com/api/4EC39FA0CED90D75/series/'.$tvshowId.'/'.$language.'.xml';
+
+alert("Show URL: "+showURL);
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }	  
+	xmlhttp.open("GET",showURL,false);
+	xmlhttp.send();
+	xmlDoc=xmlhttp.responseXML;
+alert("Show xmldoc: "+xmlDoc);
+	
+}
+
+
+/*
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","time.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML;
+document.getElementById("time").innerHTML=xmlDoc.getElementsByTagName("Time")[0].childNodes[0].nodeValue;
+*/
+
+</script>
+
+<div id align=center>
+<font size=6 color=blue>Get Your Faviorate TV Show Details</font>
+</BR></BR></BR></BR></BR></BR></BR></BR></BR></BR></BR></BR>
+<form name=fmain method="POST" action="/cgi-bin/mvdb.pl">
+<table class=fontColor>
+<tr><td>Showname: </td><td> <input type=textbox value=Fringe id=id_show></input></td></tr>
+<tr><td>Language: </td><td> <input type=textbox value=English id=id_lang></input></td></tr>
+<tr><td colspan=3><input type=submit value=Submit id=submitbtn onclick=test()></input></td></tr>
+</table>
+</form>
+</BR></BR></BR></BR></BR></BR></BR></BR>
+<a href="http://www.qortuba.org/wp-content/uploads/2009/04/top-tv-shows-power-image-jan091.jpg">Image Source</a>
+</div>
+</body>
+</html>

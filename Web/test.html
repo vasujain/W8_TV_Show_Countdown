@@ -1,0 +1,18 @@
+<HTML>
+<HEAD>
+<script type="text/javascript">
+function chkNum() {
+theNum = document.forms[0].Num.value;
+theNum = theNum.replace( /\D/g, '' );
+alert(theNum)
+}
+</script>
+</HEAD>
+
+<BODY>
+<form>
+Enter Phone Number: <input type="text" name="Num">
+<input type="button" value="Check It" onclick="chkNum()">
+</form>
+</BODY>
+</HTML>

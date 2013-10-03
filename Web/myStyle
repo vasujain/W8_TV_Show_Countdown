@@ -1,0 +1,71 @@
+    body
+        {
+            background-color:Gray
+        }
+    .tableStyle {
+		border-width: 0px;	
+		width: 25%; 
+		margin-left: auto; 
+		margin-right: auto;
+	}
+	.columnDefStyle {
+		border-style: solid;
+		border-width: 1px;
+		width:50%;
+		min-width:175px;
+		height:30px;
+		text-align:center;
+		background-image:url('assets/tableBg.png')
+	}
+	
+	
+	h1, div
+        {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+        body
+        {
+            background-color: orange;
+        }
+        
+        table
+        {
+            border-color: Black;
+            border-style: dotted;
+            background-image: url('images/tblbg.png');
+           
+        }
+        td
+        {   text-align: center;
+            border-width :thin;
+            border-style : dotted;
+			 border-color: Black;
+		min-width : 120px;
+	    max-width : 170px;
+        }
+		img
+		{
+		width : 120px;
+		height : 120px;
+		}
+		
+		a img
+		{
+		width : auto;
+		height : auto;
+		}
+		thead
+		{
+		  background-color : white;
+		  height:35px;
+		  font-size : 12pt;
+		  color : black;
+		}
+		a{
+		 color : white;
+		
+		}

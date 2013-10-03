@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>VJ-LAPPY</Machine>
+    <WindowsUser>Vasu</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <RegisteredManifestChecksum>A648F50ED1C9366E01B0F5E9AE1ABF19470C00BB9D0E5C50E962F1229C9100B9</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>12d3f31f-a974-4afb-a106-3b1a470033c7_1.0.0.0_neutral__ggk91ja7mqe4w</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>12d3f31f-a974-4afb-a106-3b1a470033c7_ggk91ja7mqe4w!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>12d3f31f-a974-4afb-a106-3b1a470033c7</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Vasu</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\Vasu\Documents\Visual Studio 2012\Projects\HelloWorld\HelloWorld\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-07-28T11:00:55.475</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\Vasu\Documents\Visual Studio 2012\Projects\HelloWorld\HelloWorld\default.html">
+      <PackagePath>default.html</PackagePath>
+      <Modified>2012-07-28T19:29:21.079</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vasu\Documents\Visual Studio 2012\Projects\HelloWorld\HelloWorld\fringe.xml">
+      <PackagePath>fringe.xml</PackagePath>
+      <Modified>2012-07-28T10:51:30.106</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vasu\Documents\Visual Studio 2012\Projects\HelloWorld\HelloWorld\images\logo.png">
+      <PackagePath>images\logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-19T17:36:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vasu\Documents\Visual Studio 2012\Projects\HelloWorld\HelloWorld\images\smalllogo.png">
+      <PackagePath>images\smalllogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-19T17:36:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vasu\Documents\Visual Studio 2012\Projects\HelloWorld\HelloWorld\images\splashscreen.png">
+      <PackagePath>images\splashscreen.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-19T17:36:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vasu\Documents\Visual Studio 2012\Projects\HelloWorld\HelloWorld\images\storelogo.png">
+      <PackagePath>images\storelogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-19T17:36:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vasu\Documents\Visual Studio 2012\Projects\HelloWorld\HelloWorld\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
+      <Modified>2012-07-28T18:14:43.157</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vasu\Documents\Visual Studio 2012\Projects\HelloWorld\HelloWorld\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2012-07-28T17:27:42.101</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vasu\Documents\Visual Studio 2012\Projects\HelloWorld\HelloWorld\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2012-07-28T11:00:54.929</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0.RC\1.0\">
+      <Name>Microsoft.WinJS.1.0.RC</Name>
+      <Version>1.0.8377.0</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.WinJS.1.0.RC, MinVersion=1.0.8377.0</FrameworkIdentity>
+      <AppxLocation>C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0.RC\1.0\Microsoft.WinJS.1.0.RC.appx</AppxLocation>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,68 @@
+﻿body {
+}
+
+@media screen and (-ms-view-state: fullscreen-landscape) {
+}
+
+@media screen and (-ms-view-state: filled) {
+}
+
+@media screen and (-ms-view-state: snapped) {
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+}
+ .movieContainer
+{
+ width: 50%;
+margin-left: auto;
+margin-right: auto;
+}
+ 
+ #zoomedOutListView {
+    margin-left: 75px;
+}
+
+#zoomedOutListView .win-item {
+    height: 500px;
+    width: 250px;         
+}
+
+#zoomedOutListView .win-container {
+    margin-right:30px;
+} 
+
+.zoomedOutItemContainer {
+    min-height: 500px;
+    height: 100%;
+    width: 250px;
+    display: -ms-grid;
+   
+    -ms-grid-rows: 1fr 130px 400px 1fr;
+    -ms-grid-columns: 1fr;
+}
+
+.zoomeOutItemImage {
+    -ms-grid-row-span: 4;
+}
+
+.zoomedOutGroupImage {
+    -ms-grid-row: 3;
+}
+
+.zoomedOutItemCount {
+    -ms-grid-row: 2;
+    -ms-grid-column-align: end;
+    font-size: 80px;
+    color: rgb(250, 243, 214);
+    margin: -7px 12px 0px 20px;
+    font-weight: 100;
+}
+
+.zoomedOutGroupTitle {
+    -ms-grid-row: 2;
+    font-size: 32px;
+    color: rgb(250, 243, 214);
+    margin: 7px 0px 0px 16px;
+    font-weight: 200;
+}

@@ -1,0 +1,65 @@
+<html>
+<head>
+
+
+<script type="text/javascript">
+	function getTVCdata()
+	{
+		//http://www.tvguide.com/top-tv-shows
+		//http://www.hulu.com/browse/tv
+		///http://www.tv.com/shows/
+		//http://tvcountdown.com/
+		//http://tvcountdown.com/js/shows.js
+		//<td><img src='http://assets.huluim.com/shows/show_thumbnail_"+shows[i][2]+".jpg'/></td></tr>";
+		//http://assets.huluim.com/shows/show_thumbnail_009_1.jpg
+		//http://www.tv.com/shows/how-i-met-your-mother/
+		//http://tvcountdown.com/s/american-horror-story
+		
+		var loading=document.getElementById("loadingArea");
+		loading.style.color="Red";
+		loading.style.font="bold 20px arial blink";		
+		loading.innerHTML+="Page Loading .. Please Wait... ";
+		var tableStru="<table border=1><tr><th align='center' colspan=3 style='font-family:arial;color:red;font-size:20px;'>List of Shows airing this Season</th></tr><tr><th>S.No</th><th>Show Name</th><th>Show URL at TV.com</th></tr>";
+		for(var i=0;i<shows.length;i++)//shows.length
+		{
+		//var urlString="<a href='"+"http://www.tv.com/shows/"+shows[i][2]+"/"+"'>"+shows[i][0]+"</a>";		
+		var urlString="<a href='"+"http://tvcountdown.com/s/"+shows[i][2]+"/"+"'>"+shows[i][0]+"</a>";		
+		var imgSource="<img src='http://assets.huluim.com/shows/show_thumbnail_"+shows[i][0]+".jpg'";
+		var imgSource="";
+		tableStru+="<tr><td>"+(i+1)+"</td><td>"+shows[i][0]+"</td><td>"+urlString+"</td><td>"+imgSource+"</td></tr>";
+		}
+		tableStru+="</table>";
+		loading.innerHTML=(tableStru);				
+		
+	}
+</script>
+<script type="text/javascript" src="http://tvcountdown.com/js/shows.js"></script>
+
+</head>
+<center>
+	<div id ="tableArea"></div>
+	<div id ="loadingArea">
+		<b><font size=5 color=blue>Your Faviorate Show is about to begin in .... Minutes.... </font></b></br></br>
+			<table border=1>
+				<tr>
+					<td><input type="radio" name="chkBox" value="American Horror Story" /></td> <td>American Horror Story</td> <td> <img src="http://assets.huluim.com/shows/show_thumbnail_american_horror_story.jpg"/></td>
+				</tr>
+				<tr>
+					<td><input type="radio" name="chkBox" value="How i met your Mother" /></td><td>How i met your Mother</br></td><td><img src="http://assets.huluim.com/shows/show_thumbnail_how_i_met_your_mother.jpg"/></td>
+				</tr>
+				<tr>
+					<td><input type="radio" name="chkBox" value="Modern Family" /></td><td>Modern Family</br></td> <td><img src="http://assets.huluim.com/shows/show_thumbnail_modern_family.jpg"/></td>                          
+				</tr>
+				<tr> 
+					<td><input type="radio" name="chkBox" value="Fringe" /></td><td>Fringe</br></td> <td> <img src="http://assets.huluim.com/shows/show_thumbnail_fringe.jpg"/></td>
+				</tr>
+				<tr> 
+					<td><input type="radio" name="chkBox" value="Chuck" /></td><td>Chuck</br></td> <td> <img src="http://assets.huluim.com/shows/show_thumbnail_chuck.jpg"/></td>
+				</tr>
+				<tr>
+					<td colspan=3 align="center"><input type="button" onClick="getTVCdata()" value="Click me Fucker.."/></td>
+				</tr>
+			</table>		
+	</div>
+</center>
+<html>

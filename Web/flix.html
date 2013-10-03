@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+
+    <script type="text/javascript">
+        //Key: w697y3tvc9n4arza5vcnx9zt
+        function callTheJsonp(movie) {
+            if(movie.length<=0) {
+                alert("Enter movie name fucker");
+            }
+            var url ='http://api.rottentomatoes.com/api/public/v1.0/movies.json?callback=parseRequest&apikey=w697y3tvc9n4arza5vcnx9zt&page_limit=5&q=' + movie;
+            addScript(url);
+        }
+        function parseRequest(response) {
+            var numberOfMovie = response.total;
+            var movieResultTable = document.getElementById("movieResults");
+            //movieResultTable.innerHTML = '<table border=1>';
+
+            var newTable = document.createElement('table');
+            newTable.setAttribute("border",1);
+            var newRow = newTable.insertRow(0);
+            newRow.insertCell(0).innerHTML = 'Title';
+            newRow.insertCell(1).innerHTML = 'Year';
+            newRow.insertCell(2).innerHTML = 'Runtime';
+            newRow.insertCell(3).innerHTML = 'Poster';
+            newRow.insertCell(4).innerHTML = 'Tweet it';
+            newRow.insertCell(5).innerHTML = 'Share on FB';
+            movieResultTable.appendChild(newTable);
+
+            for( var i=0;i<numberOfMovie; i++) {
+                var newRow = newTable.insertRow(i+1);
+                newRow.insertCell(0).innerHTML = response.movies[i].title;
+                newRow.insertCell(1).innerHTML = response.movies[i].year;
+                newRow.insertCell(2).innerHTML = response.movies[i].runtime;
+                newRow.insertCell(3).innerHTML = '<img src='+ response.movies[i].posters.thumbnail + '>';
+                newRow.insertCell(4).innerHTML += '<div align="center"><iframe src="https://platform.twitter.com/widgets/tweet_button.html?href=www.vasujain.in" scrolling="no" frameborder="0"  style="border:none; width:80px; height:80px"></iframe></div>';
+                newRow.insertCell(5).innerHTML = '<div align="center"><iframe src="https://www.facebook.com/plugins/like.php?href=www.vasujain.in&text=I am planning to watch #" + response.movies[i].title scrolling="no" frameborder="0"  style="border:none; width:50px; height:80px"></iframe></div>';
+                movieResultTable.appendChild(newTable);
+            }
+        }
+        function addScript(url) {
+            var script = document.createElement('script');
+            script.setAttribute("src",url);
+            document.getElementsByTagName("head")[0].appendChild(script);
+        }
+    </script>
+</head>
+<body>
+<div align="center">
+    <img src = 'http://api.ning.com/files/s0vvqwAaLUwJNMg4AoL0BeU1m7NecbhzKdFHQRTFfQOtwmW0MjmXvNtIhTYiLFYPfna8W-*Dy0cTBn9GMwnz9fPSWBiyinuN/movies_banner.jpg' height = "100px">
+    </br><div style="font-size: xx-large;font-weight: bold; color: blue">Search My Movie</div></br>
+    <form>
+        <input type="text" name="movieName" value="">
+        <input type="button" value="submit" onclick="callTheJsonp(this.form.movieName.value)">
+    </form>
+    </br>
+    <div id="movieResults"></div>
+</div>
+</body>
+</html>
